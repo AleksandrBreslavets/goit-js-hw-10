@@ -12,7 +12,7 @@ export function createCountryDescrMarkup(arr) {
         <p class="feature-value"><span class="feature-name">Population: </span>${population}</p>
       </li>
       <li>
-        <p class="feature-value"><span class="feature-name">Languages: </span>${Object.values(languages)}</p>
+        <p class="feature-value"><span class="feature-name">Languages: </span>${Object.values(languages).join(", ")}</p>
       </li>
     </ul>`
 ).join("");

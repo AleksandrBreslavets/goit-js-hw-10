@@ -25,11 +25,12 @@ function onInput(evt) {
             refs.countryDescr.innerHTML = createCountryDescrMarkup(countriesList);
             return;
         }
-    }).catch(() => {
-        refs.listOfCountries.innerHTML = "";
-        refs.countryDescr.innerHTML = "";
-        if (countryName !== "") {
+    }).catch((err) => {
+        if (err.status = "404") {
             Notiflix.Notify.failure('Oops, there is no country with that name');
         }
+        else { console.log(err.message) };
+        refs.listOfCountries.innerHTML = "";
+        refs.countryDescr.innerHTML = "";
     });
 }
